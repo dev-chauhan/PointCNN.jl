@@ -24,7 +24,7 @@ batches = [
 ];
 
 y = [
-    Flux.onehotbatch(file1["label"][1,j:j+batch_size-1])|>gpu for j=1:batch_size:Int(floor(train_data_len / batch_size))*batch_size
+    Flux.onehotbatch(file1["label"][1,j:j+batch_size-1], 0:39)|>gpu for j=1:batch_size:Int(floor(train_data_len / batch_size))*batch_size
 ]
 
 # optimizer
